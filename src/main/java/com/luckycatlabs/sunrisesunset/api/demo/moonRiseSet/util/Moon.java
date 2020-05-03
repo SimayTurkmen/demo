@@ -117,7 +117,7 @@ public final class Moon {
      *            Distance of the moon, in kilometers.
      * @return Angular radius of the moon, in radians.
      * @see <a href="https://en.wikipedia.org/wiki/Angular_diameter">Wikipedia: Angular
-     *      Diameter</a>
+     *      Diameter</a>MoonPhase
      */
     public static double angularRadius(double distance) {
         return asin(MOON_MEAN_RADIUS / distance);

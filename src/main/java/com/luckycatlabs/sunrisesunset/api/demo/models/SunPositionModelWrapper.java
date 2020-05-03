@@ -16,7 +16,20 @@ public class SunPositionModelWrapper {
 
     private LocalDateTime moonRise;
 
-    private LocalDateTime moonSet;
+    private String moonSet;
+
+    private Double moonVisualPercentage;
+
+    private LocalDateTime nextNewMoon;
+
+    private LocalDateTime nextFullMoon;
+
+    private Double moonAzimuth;
+
+    private Double moonAltitude;
+
+    private Double moonDistance;
+
 
     public Double getLatitude() {
         return latitude;
@@ -67,11 +80,59 @@ public class SunPositionModelWrapper {
         this.moonRise = moonRise;
     }
 
-    public LocalDateTime getMoonSet() {
+    public String getMoonSet() {
         return moonSet;
     }
 
-    public void setMoonSet(LocalDateTime moonSet) {
+    public void setMoonSet(String moonSet) {
         this.moonSet = moonSet;
+    }
+
+    public Double getMoonVisualPercentage() {
+        return moonVisualPercentage;
+    }
+
+    public void setMoonVisualPercentage(Double moonVisualPercentage) {
+        this.moonVisualPercentage = moonVisualPercentage;
+    }
+
+    public LocalDateTime getNextNewMoon() {
+        return nextNewMoon;
+    }
+
+    public void setNextNewMoon(LocalDateTime nextNewMoon) {
+        this.nextNewMoon = nextNewMoon;
+    }
+
+    public LocalDateTime getNextFullMoon() {
+        return nextFullMoon;
+    }
+
+    public void setNextFullMoon(LocalDateTime nextFullMoon) {
+        this.nextFullMoon = nextFullMoon;
+    }
+
+    public Double getMoonAzimuth() {
+        return moonAzimuth;
+    }
+
+    public void setMoonAzimuth(Double moonAzimuth) {
+        this.moonAzimuth = moonAzimuth;
+    }
+
+    public Double getMoonAltitude() {
+        return moonAltitude;
+    }
+
+    public void setMoonAltitude(Double moonAltitude) {
+        this.moonAltitude = moonAltitude;
+    }
+
+    public Double getMoonDistance() {
+        return moonDistance;
+    }
+
+    public void setMoonDistance(Double moonDistance) {
+        this.moonDistance = moonDistance;
     }
 }

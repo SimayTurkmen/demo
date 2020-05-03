@@ -1,7 +1,6 @@
 package com.luckycatlabs.sunrisesunset.api.demo.api;
 
 import com.luckycatlabs.sunrisesunset.api.demo.controller.WriteToFile;
-import com.luckycatlabs.sunrisesunset.api.demo.gen.SunriseSunsetResultWrapper;
 import com.luckycatlabs.sunrisesunset.api.demo.models.SunPositionModel;
 import com.luckycatlabs.sunrisesunset.api.demo.models.SunPositionModelWrapper;
 import com.luckycatlabs.sunrisesunset.api.demo.service.SonarSystemService;
@@ -15,14 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.util.*;
+import java.util.Date;
+import java.util.Map;
 
 @RestController
 @RequestMapping("abc")
@@ -109,17 +107,29 @@ public class SonarController {
     }
 
     @GetMapping("/getMoonSetTime")
-    public LocalDateTime getMoonSetTime(String date, double lat, double lon) throws ParseException {
+    public String getMoonSetTime(String date, double lat, double lon) throws ParseException {
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(date);
         long millis = offsetDateTime.toInstant().toEpochMilli();
         SunPositionModel solarModelForDate = sonarSystemService.
                 getSolarModelForDate(millis, lat, lon);
-        Date moonSet = solarModelForDate.getMoonSet();
-        long time = moonSet.getTime();
-        LocalDateTime ldt =
-                LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault());
+        String forDateMoonSet = solarModelForDate.getMoonSet();
+        if (forDateMoonSet.equals("Not Calculated")) {
+            solarModelForDate.setMoonSet("Not Calculated");
+        } else {
+            solarModelForDate.setMoonSet(forDateMoonSet);
+        }
+        return forDateMoonSet;
+    }
 
-        return ldt;
+    @GetMapping("/getMoonVisualPerc")
+    public Double getMoonVisualPercentage(String date, double lat, double lon) throws ParseException {
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse(date);
+        long millis = offsetDateTime.toInstant().toEpochMilli();
+        SunPositionModel solarModelForDate = sonarSystemService.
+                getSolarModelForDate(millis, lat, lon);
+        double moonVisualPercentage = solarModelForDate.getMoonVisualPercentage();
+
+        return moonVisualPercentage;
     }
 
     @GetMapping("/getAll")

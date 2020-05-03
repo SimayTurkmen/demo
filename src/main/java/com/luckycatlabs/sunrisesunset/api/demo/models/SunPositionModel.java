@@ -1,11 +1,7 @@
 package com.luckycatlabs.sunrisesunset.api.demo.models;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class SunPositionModel {
     private Double latitude;
@@ -16,15 +12,23 @@ public class SunPositionModel {
 
     private Date sunset;
 
-    private Date sunMiddle;
-
-    private double moonVisualPercentage;
-
     private Date dayTime;
 
     private Date moonRise;
 
-    private Date moonSet;
+    private String moonSet;
+
+    private double moonVisualPercentage;
+
+    private Date nextNewMoon;
+
+    private Date nextFullMoon;
+
+    private Double moonAzimuth;
+
+    private Double moonAltitude;
+
+    private Double moonDistance;
 
     public Double getLatitude() {
         return latitude;
@@ -58,12 +62,28 @@ public class SunPositionModel {
         this.sunset = sunset;
     }
 
-    public Date getSunMiddle() {
-        return sunMiddle;
+    public Date getMoonRise() {
+        return moonRise;
     }
 
-    public void setSunMiddle(Date sunMiddle) {
-        this.sunMiddle = sunMiddle;
+    public void setMoonRise(Date moonRise) {
+        this.moonRise = moonRise;
+    }
+
+    public String getMoonSet() {
+        return moonSet;
+    }
+
+    public void setMoonSet(String moonSet) {
+        this.moonSet = moonSet;
+    }
+
+    public Date getDayTime() {
+        return dayTime;
+    }
+
+    public void setDayTime(Date dayTime) throws ParseException {
+        this.dayTime = dayTime;
     }
 
     public double getMoonVisualPercentage() {
@@ -74,35 +94,43 @@ public class SunPositionModel {
         this.moonVisualPercentage = moonVisualPercentage;
     }
 
-    public Date getMoonRise() {
-        return moonRise;
+    public Date getNextNewMoon() {
+        return nextNewMoon;
     }
 
-    public void setMoonRise(Date moonRise) {
-        this.moonRise = moonRise;
+    public void setNextNewMoon(Date nextNewMoon) {
+        this.nextNewMoon = nextNewMoon;
     }
 
-    public Date getMoonSet() {
-        return moonSet;
+    public Date getNextFullMoon() {
+        return nextFullMoon;
     }
 
-    public void setMoonSet(Date moonSet) {
-        this.moonSet = moonSet;
+    public void setNextFullMoon(Date nextFullMoon) {
+        this.nextFullMoon = nextFullMoon;
     }
 
-    public Date getDayTime() {
-        return dayTime;
+    public Double getMoonAzimuth() {
+        return moonAzimuth;
     }
 
-    public void setDayTime(Date dayTime) throws ParseException {
-       /* String s = String.format("%02d:%02d:%02d",
-                TimeUnit.MILLISECONDS.toHours(dayTime),
-                TimeUnit.MILLISECONDS.toMinutes(dayTime) -
-                        TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(dayTime)), // The change is in this line
-                TimeUnit.MILLISECONDS.toSeconds(dayTime) -
-                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(dayTime)));
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");*/
-        this.dayTime = dayTime;
-        //this.dayTime = dayTime;
+    public void setMoonAzimuth(Double moonAzimuth) {
+        this.moonAzimuth = moonAzimuth;
+    }
+
+    public Double getMoonAltitude() {
+        return moonAltitude;
+    }
+
+    public void setMoonAltitude(Double moonAltitude) {
+        this.moonAltitude = moonAltitude;
+    }
+
+    public Double getMoonDistance() {
+        return moonDistance;
+    }
+
+    public void setMoonDistance(Double moonDistance) {
+        this.moonDistance = moonDistance;
     }
 }
