@@ -113,7 +113,7 @@ public class SonarController {
         SunPositionModel solarModelForDate = sonarSystemService.
                 getSolarModelForDate(millis, lat, lon);
         String forDateMoonSet = solarModelForDate.getMoonSet();
-        if (forDateMoonSet.equals("Not Calculated")) {
+        if (forDateMoonSet == "Not Calculated") {
             solarModelForDate.setMoonSet("Not Calculated");
         } else {
             solarModelForDate.setMoonSet(forDateMoonSet);

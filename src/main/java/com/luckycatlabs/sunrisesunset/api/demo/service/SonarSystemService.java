@@ -73,6 +73,7 @@ public class SonarSystemService {
         model.setSunrise(Date.from(Instant.ofEpochMilli(officialSunrise)));
         model.setSunset(Date.from(Instant.ofEpochMilli(officialSunset)));
         model.setDayTime(Date.from(Instant.ofEpochMilli(officialSunset - officialSunrise - 7200000)));
+        model.setMoonRise(moonTimes.getRise());
         model.setMoonVisualPercentage(round);
 
         Date newMoonPhaseTime = newMoonPhase.getTime();
