@@ -1,5 +1,7 @@
 package com.luckycatlabs.sunrisesunset.api.demo.models;
 
+import com.luckycatlabs.sunrisesunset.api.demo.model.AstronomicalInfoModel;
+
 import java.text.ParseException;
 import java.util.Date;
 
@@ -29,6 +31,16 @@ public class SunPositionModel {
     private Double moonAltitude;
 
     private Double moonDistance;
+
+    private AstronomicalInfoModel astronomicalInfo;
+
+    public AstronomicalInfoModel getAstronomicalInfo() {
+        return astronomicalInfo;
+    }
+
+    public void setAstronomicalInfo(AstronomicalInfoModel astronomicalInfo) {
+        this.astronomicalInfo = astronomicalInfo;
+    }
 
     public Double getLatitude() {
         return latitude;

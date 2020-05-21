@@ -1,27 +1,27 @@
 package com.luckycatlabs.sunrisesunset.api.demo.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
-public class AstronomicalInfoWrapper {
+public class AstronomicalInfoModel {
     private Double latitude;
 
     private Double longitude;
 
-    private LocalDateTime sunrise;
+    private Date sunrise;
 
-    private LocalDateTime sunset;
+    private Date sunset;
 
-    private LocalDateTime dayTime;
+    private Date dayTime;
 
-    private LocalDateTime twilight_begin;
+    private Date twilight_begin;
 
-    private LocalDateTime twilight_end;
+    private Date twilight_end;
 
-    private LocalDateTime moonRise;
+    private Date moonRise;
 
     private String moonSet;
 
-    private Double moonVisualPercentage;
+    private double moonVisualPercentage;
 
     public Double getLatitude() {
         return latitude;
@@ -39,51 +39,51 @@ public class AstronomicalInfoWrapper {
         this.longitude = longitude;
     }
 
-    public LocalDateTime getSunrise() {
+    public Date getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise(LocalDateTime sunrise) {
+    public void setSunrise(Date sunrise) {
         this.sunrise = sunrise;
     }
 
-    public LocalDateTime getSunset() {
+    public Date getSunset() {
         return sunset;
     }
 
-    public void setSunset(LocalDateTime sunset) {
+    public void setSunset(Date sunset) {
         this.sunset = sunset;
     }
 
-    public LocalDateTime getDayTime() {
+    public Date getDayTime() {
         return dayTime;
     }
 
-    public void setDayTime(LocalDateTime dayTime) {
+    public void setDayTime(Date dayTime) {
         this.dayTime = dayTime;
     }
 
-    public LocalDateTime getTwilight_begin() {
+    public Date getTwilight_begin() {
         return twilight_begin;
     }
 
-    public void setTwilight_begin(LocalDateTime twilight_begin) {
+    public void setTwilight_begin(Date twilight_begin) {
         this.twilight_begin = twilight_begin;
     }
 
-    public LocalDateTime getTwilight_end() {
+    public Date getTwilight_end() {
         return twilight_end;
     }
 
-    public void setTwilight_end(LocalDateTime twilight_end) {
+    public void setTwilight_end(Date twilight_end) {
         this.twilight_end = twilight_end;
     }
 
-    public LocalDateTime getMoonRise() {
+    public Date getMoonRise() {
         return moonRise;
     }
 
-    public void setMoonRise(LocalDateTime moonRise) {
+    public void setMoonRise(Date moonRise) {
         this.moonRise = moonRise;
     }
 
@@ -95,11 +95,11 @@ public class AstronomicalInfoWrapper {
         this.moonSet = moonSet;
     }
 
-    public Double getMoonVisualPercentage() {
+    public double getMoonVisualPercentage() {
         return moonVisualPercentage;
     }
 
-    public void setMoonVisualPercentage(Double moonVisualPercentage) {
+    public void setMoonVisualPercentage(double moonVisualPercentage) {
         this.moonVisualPercentage = moonVisualPercentage;
     }
 }

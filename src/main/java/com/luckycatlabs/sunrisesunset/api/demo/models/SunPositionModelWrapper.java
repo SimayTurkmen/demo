@@ -1,5 +1,7 @@
 package com.luckycatlabs.sunrisesunset.api.demo.models;
 
+import com.luckycatlabs.sunrisesunset.api.demo.model.AstronomicalInfoWrapper;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -30,6 +32,15 @@ public class SunPositionModelWrapper {
 
     private Double moonDistance;
 
+    private AstronomicalInfoWrapper astronomicalInfoWrapper;
+
+    public AstronomicalInfoWrapper getAstronomicalInfoWrapper() {
+        return astronomicalInfoWrapper;
+    }
+
+    public void setAstronomicalInfoWrapper(AstronomicalInfoWrapper astronomicalInfoWrapper) {
+        this.astronomicalInfoWrapper = astronomicalInfoWrapper;
+    }
 
     public Double getLatitude() {
         return latitude;
